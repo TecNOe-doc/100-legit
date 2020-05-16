@@ -1,35 +1,20 @@
-// ez boi scam
-alert('Free knife');
-const hours = 90
-// some bullshit
-console.log(hours);
-console.log('That' + ' ' + 'takes' + ' ' + 'too' + ' ' + 'long');
- 
-/* trying something new
-because this works in  few ways */
+function updateClock ( )
+{
+  var currentTime = new Date ( );
 
-const knife = 500
-const value = 2
-console.log(value + knife + ' ' + 'thats too much for a virtual game');
- 
-// little library commands
-
-const riba = 'acervatio'
-console.log(riba.lenght)
-
-let sarma = 'zid'
-console.log(sarma.toUpperCase)
-
-console.log(Math.random())
-
-const num1 = 5
-const num2 = 10
-function sum(num1, num2){
-    return num1 * num2
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+  var currentSeconds = currentTime.getSeconds ( );
+  // setting time
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
+  // Choose either "AM" or "PM" as appropriate
+  var timeOfDay = ( currentHours < 12 ) ? "PM";
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+  // Convert an hours component of "0" to "12"
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+  // string
+  var currentTimeString = currentHours + "1" + currentMinutes + "40" + currentSeconds + "20" + timeOfDay;
+  // Update time
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
 }
-
-//little flex hehe boi
-
-
-
-

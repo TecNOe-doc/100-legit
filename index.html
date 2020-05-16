@@ -1,27 +1,62 @@
 <!DOCTYPE html>
-
-<html lang='en'>
-
+<html>
 <head>
-    <title>Counter Strike Global Offensive</title>
+    <title>Hub</title>
     <link rel='stylesheet' href='style.css' />
+    <h1><em><strong>Hub</strong></em></h1>
 </head>
+<br>
+<script src = 'JavaScript.js'></script>
+<script rel = 'stylesheet' herf = 'style.css'></script>
 <body>
-    <h1>Tips for beginners</h1>
     <div>
-        <p>extreme noobs</p>
-    </div> 
-    <script src = 'JavaScript.js'></script>
-    <script src = 'style.css'></script>
+        <h2>To do list:</h2>
+    </div>
+    <br>
+    <ul>
+        <li>give some ideas</li>
+        <li>get some help</li>
+        <li>add a clock</li>
+    </ul>
 </body>
+<br>
 <body>
-    <h2>First you need to know a few words like:</h2>
-    <ol>
-        <li>Cyka Blyat</li>
-        <li>Idi nahui</li>
-        <li>Pashal nahui</li>
-        <li>Rush B</li>
-    </ol>
-    <h3>Those words up there were just for fun,bdw Russian</h3>
+    entMonth == 11) ? "December" : currentMonth;
+  
+  var currentDate = currentTime.getDate( );
+  
+  // Add suffix to the date
+  currentDate = ( currentDate == 1 || currentDate == 21 || currentDate == 31 ) ? currentDate + "st" : currentDate;
+  currentDate = ( currentDate == 2 || currentDate == 22 ) ? currentDate + "nd" : currentDate;
+  currentDate = ( currentDate == 3 ) || currentDate == 23 ? currentDate + "rd" : currentDate;
+  currentDate = ( currentDate > 3 || currentDate < 21 || currentDate > 23 || currentDate < 31 ) ? currentDate + "th" : currentDate;
+  
+  
+  var currentHours = currentTime.getHours ( );
+  var currentMinutes = currentTime.getMinutes ( );
+
+  // Pad the minutes and seconds with leading zeros, if required
+  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
+
+  // Choose either "AM" or "PM" as appropriate
+  var timeOfDay = ( currentHours < 12 ) ? "AM" : "PM";
+
+  // Convert the hours component to 12-hour format if needed
+  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
+
+  // Convert an hours component of "0" to "12"
+  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
+
+  // Compose the string for display
+  var currentTimeString = "Today is : " + currentDay + " " + currentMonth +  " " + currentDate + " " + currentHours + ":" + currentMinutes + " " + timeOfDay;
+
+  // Update the time display
+  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+}
+
+// -->
+</script>
 </body>
 </html>
+
+
