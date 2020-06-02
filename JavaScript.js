@@ -1,20 +1,19 @@
-function updateClock ( )
-{
-  var currentTime = new Date ( );
+function moveHands() {
+  with (new Date()) {
+    h = 30 * ((getHours() % 12) + getMinutes() / 60); // 30 degrees hour
+    m = 6 * getMinutes(); // 6 degrees every minute
+    s = 6 * getSeconds(); // 6 degrees every second
+    
+    // setting the rotate CSS attribute to those degree values -->
+    document.getElementById("seconds").style.cssText =
+      "-webkit-transform:rotate(" + s + "deg);";
+    document.getElementById("minutes").style.cssText =
+      "-webkit-transform:rotate(" + m + "deg);";
+    document.getElementById("hours").style.cssText =
+      "-webkit-transform:rotate(" + h + "deg);";
 
-  var currentHours = currentTime.getHours ( );
-  var currentMinutes = currentTime.getMinutes ( );
-  var currentSeconds = currentTime.getSeconds ( );
-  // setting time
-  currentMinutes = ( currentMinutes < 10 ? "0" : "" ) + currentMinutes;
-  currentSeconds = ( currentSeconds < 10 ? "0" : "" ) + currentSeconds;
-  // Choose either "AM" or "PM" as appropriate
-  var timeOfDay = ( currentHours < 12 ) ? "PM";
-  currentHours = ( currentHours > 12 ) ? currentHours - 12 : currentHours;
-  // Convert an hours component of "0" to "12"
-  currentHours = ( currentHours == 0 ) ? 12 : currentHours;
-  // string
-  var currentTimeString = currentHours + "1" + currentMinutes + "40" + currentSeconds + "20" + timeOfDay;
-  // Update time
-  document.getElementById("clock").firstChild.nodeValue = currentTimeString;
+    setTimeout(moveHands, 1000); 
+  }
 }
+
+window.onload = moveHands;
